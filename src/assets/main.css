@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400..900&display=swap');
+@import 'tailwindcss';
+@plugin "tailwindcss-motion";
+
+:root {
+  --font-elegant: 'Playfair Display', serif;
+}
+
+@layer components {
+  .font-elegant {
+    font-family: var(--font-elegant);
+  }
+
+  .nav-bar-item {
+    @apply dark:hover:text-zinc-200 hover:text-zinc-900 hover:motion-preset-seesaw cursor-pointer;
+  }
+
+  .title {
+    -webkit-text-stroke: 1px #c41212;
+    font-family: var(--font-elegant);
+    @apply text-transparent font-bold italic opacity-60 text-5xl lg:text-8xl xl:-ml-30 text-center xl:text-left;
+  }
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
