@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue'
-
 type Particle = {
     x: number
     y: number

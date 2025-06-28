@@ -1,3 +1,7 @@
+# Manually added
+NOTES.md
+.vscode/
+
 # Logs
 logs
 *.log
@@ -13,6 +17,7 @@ dist
 dist-ssr
 coverage
 *.local
+.output/
 
 /cypress/videos/
 /cypress/screenshots/

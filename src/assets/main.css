@@ -4,23 +4,43 @@
 @plugin "tailwindcss-motion";
 
 :root {
-  --font-elegant: 'Playfair Display', serif;
+    --font-elegant: 'Playfair Display', serif;
+}
+
+@layer base {
+    button,
+    [role='button'] {
+        cursor: pointer;
+    }
 }
 
 @layer components {
-  .font-elegant {
-    font-family: var(--font-elegant);
-  }
+    .font-elegant {
+        font-family: var(--font-elegant);
+    }
 
-  .nav-bar-item {
-    @apply dark:hover:text-zinc-200 hover:text-zinc-900 hover:motion-preset-seesaw cursor-pointer;
-  }
+    .nav-bar-item {
+        @apply hover:motion-preset-seesaw cursor-pointer hover:text-zinc-900 dark:hover:text-zinc-200;
+    }
 
-  .title {
-    -webkit-text-stroke: 1px #c41212;
-    font-family: var(--font-elegant);
-    @apply text-transparent font-bold italic opacity-60 text-5xl lg:text-8xl xl:-ml-30 text-center xl:text-left;
-  }
+    .title {
+        -webkit-text-stroke: 1px #c41212;
+        font-family: var(--font-elegant);
+        @apply text-center text-5xl font-bold text-transparent italic opacity-60 md:text-7xl lg:text-8xl xl:text-left;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .no-scrollbar {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .toolbar-button {
+        @apply flex items-center justify-center gap-2 rounded bg-zinc-900 px-3 py-1 text-zinc-200 hover:bg-zinc-950/70 dark:bg-zinc-950;
+    }
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
