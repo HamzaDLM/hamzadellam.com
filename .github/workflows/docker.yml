@@ -33,7 +33,7 @@ jobs:
 
       - name: Trigger Coolify redeploy
         run: |
-          curl -X POST \
+          curl \
           -H "Authorization: Bearer ${{ secrets.COOLIFY_HOOK_TOKEN }}" \
           ${{ secrets.COOLIFY_REDEPLOY_HOOK }}
         env:
