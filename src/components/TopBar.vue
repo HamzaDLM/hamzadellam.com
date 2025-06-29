@@ -62,9 +62,9 @@ onMounted(setThemeFromPreference)
             <button @click="switchTab('Projects')" :class="styleMobileTabs('Projects')"
                 class="nav-bar-item">Projects</button>
             <button @click="openEmail" :class="styleMobileTabs('Contact')" class="nav-bar-item">Contact</button>
-            <button href="https://github.com/HamzaDLM" target="_blank" class="nav-bar-item">
+            <a href="https://github.com/HamzaDLM" target="_blank" class="nav-bar-item">
                 <GithubIcon class="w-9" />
-            </button>
+            </a>
             <button @click="switchTab('Playground')" class="nav-bar-item">
                 <PlaygroundIcon class="w-9" />
             </button>
@@ -85,9 +85,9 @@ onMounted(setThemeFromPreference)
             <button @click="openEmail" class="nav-bar-item">
                 <MailIcon class="w-6" />
             </button>
-            <button href="https://github.com/HamzaDLM" target="_blank" class="nav-bar-item">
+            <a href="https://github.com/HamzaDLM" target="_blank" class="nav-bar-item">
                 <GithubIcon class="w-5" />
-            </button>
+            </a>
             <button @click="switchTab('Playground')" class="nav-bar-item">
                 <PlaygroundIcon class="w-5" />
             </button>
