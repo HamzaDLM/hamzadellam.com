@@ -27,3 +27,12 @@ jobs:
           context: .
           push: true
           tags: someone110101/portfolio:latest
+
+      - name: Wait to ensure DockerHub image is available
+        run: sleep 5
+
+      - name: Trigger Coolify redeploy
+        run: |
+          curl -X POST ${{ secrets.COOLIFY_REDEPLOY_HOOK }}
+        env:
+          COOLIFY_REDEPLOY_HOOK: ${{ secrets.COOLIFY_REDEPLOY_HOOK }}
