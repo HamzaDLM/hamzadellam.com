@@ -1,6 +1,7 @@
 # Manually added
 NOTES.md
 .vscode/
+.vite-ssg-temp/
 
 # Logs
 logs

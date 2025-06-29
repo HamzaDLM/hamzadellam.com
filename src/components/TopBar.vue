@@ -1,5 +1,5 @@
 <script setup lang="ts">
-export type Tab = "About" | "Projects" | "Contact" | "Github" | "Playground" | "Pictures"
+export type Tab = "About" | "Projects" | "Contact" | "Github" | "Playground"
 
 const currentTab = defineModel()
 const menuOpen = ref(false)
@@ -40,7 +40,6 @@ onMounted(setThemeFromPreference)
 </script>
 
 <template>
-    {{ console.log(isDark) }}
     <div class="flex items-center justify-between px-4 py-3">
         <div class="relative flex items-center justify-center">
             <h1 v-if="showText"
@@ -69,9 +68,9 @@ onMounted(setThemeFromPreference)
             <button @click="switchTab('Playground')" class="nav-bar-item">
                 <PlaygroundIcon class="w-9" />
             </button>
-            <button @click="switchTab('Pictures')" class="nav-bar-item">
+            <!-- <button @click="switchTab('Pictures')" class="nav-bar-item">
                 <PictureIcon class="w-9" />
-            </button>
+            </button> -->
             <button class="nav-bar-item" @click="toggleTheme">
                 <LightModeIcon v-if="isDark" class="w-9" />
                 <DarkModeIcon v-else class="w-9" />
@@ -92,9 +91,9 @@ onMounted(setThemeFromPreference)
             <button @click="switchTab('Playground')" class="nav-bar-item">
                 <PlaygroundIcon class="w-5" />
             </button>
-            <button @click="switchTab('Pictures')" class="nav-bar-item">
+            <!-- <button @click="switchTab('Pictures')" class="nav-bar-item">
                 <PictureIcon class="w-5" />
-            </button>
+            </button> -->
             <button class="nav-bar-item" @click="toggleTheme">
                 <LightModeIcon v-if="isDark" class="w-5" />
                 <DarkModeIcon v-else class="w-5" />

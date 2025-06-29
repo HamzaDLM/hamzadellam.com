@@ -32,10 +32,17 @@ const items = ref<Item[]>([
     },
     {
         title: 'SwatCR',
-        imageFolder: "lumea",
+        imageFolder: "swatcr",
         tech: 'Typescript, Golang, Python, Fiber, Django, FastAPI, Openshift, Nginx, Redis, MySQL, Ansible',
         specialty: 'autonomous driving',
         description: "Full-stack platform supporting autonomous vehicle software development, enabling embedded engineers to define and manage complex data types...",
+    },
+    {
+        title: 'HardIOT',
+        imageFolder: "hardiot",
+        tech: 'Typescript, Vue, Python, FastAPI, Nginx, Redis, RabbitMQ, MongoDB',
+        specialty: 'iot',
+        description: "IOT Hub for handling high throughput data, performing ETL, setting up alerting and storing.",
     }
 ])
 </script>

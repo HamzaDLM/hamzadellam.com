@@ -4,7 +4,7 @@ import Projects from './components/Projects.vue';
 import Bottom from './components/Bottom.vue';
 import TopBar, { type Tab } from './components/TopBar.vue';
 import Playground from './components/Playground.vue';
-import Pictures from './components/Pictures.vue';
+// import Pictures from './components/Pictures.vue';
 
 const mounted = ref(false)
 const currentTab = ref<Tab>('About')
@@ -13,7 +13,7 @@ const tabs: Partial<Record<Tab, Component>> = {
 	'About': About,
 	'Projects': Projects,
 	'Playground': Playground,
-	'Pictures': Pictures
+	// 'Pictures': Pictures
 }
 
 onMounted(() => {
