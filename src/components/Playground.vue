@@ -20,7 +20,7 @@ const selectGame = (key: Playgrounds) => {
 </script>
 
 <template>
-    <div class="pt-12 h-full overflow-hidden">
+    <div class="pt-5 md:pt-12 h-full overflow-hidden">
         <div class="mb-5 flex justify-start w-full overflow-x-auto no-scrollbar gap-4 px-4 scroll-smooth">
             <button v-for="key of playgroundKeys" :key="key"
                 class="px-3 py-1 rounded whitespace-nowrap text-xl uppercase md:text-4xl"
@@ -29,7 +29,8 @@ const selectGame = (key: Playgrounds) => {
                 {{ key }}
             </button>
         </div>
-        <div class="w-full h-full md:h-[700px]">
+
+        <div class="w-full h-2/3 md:h-5/6">
             <component :is="playgrounds[activePlayground]" />
         </div>
     </div>

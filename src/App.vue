@@ -44,7 +44,7 @@ onMounted(() => {
 				<component :is="tabs[currentTab]" class="w-full h-full motion-preset-focus" />
 			</div>
 
-			<Bottom />
+			<Bottom class="hidden md:block" />
 		</div>
 	</main>
 </template>

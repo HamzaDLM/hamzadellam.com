@@ -43,7 +43,7 @@ const onMouseUp = () => { isMouseDown.value = false }
 const cellStateValues = Object.keys(CellState)
     .filter(k => isNaN(Number(k))) as (keyof typeof CellState)[]
 
-function createGrid(random = false): number[][] {
+function createGrid(): number[][] {
     return Array.from({ length: rows.value }, () =>
         Array.from({ length: cols.value }, () => 0)
     )
@@ -194,8 +194,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-    <div
-        class="motion-preset-focus-lg h-full overflow-hidden flex items-center justify-center mask-y-from-90% mask-y-to-100%">
+    <div class="motion-preset-focus-lg h-full select-none overflow-hidden flex items-center justify-center mask-fade-between">
         <div ref="containerRef" class="w-full aspect-square border-y-2 dark:border-zinc-600/20 overflow-hidden">
             <div class="grid w-full" :style="{ gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` }"
                 @mousedown="onMouseDown">
@@ -211,11 +210,12 @@ onBeforeUnmount(() => {
             </div>
         </div>
     </div>
+
     <Toolbar>
         <div class="flex flex-col gap-2">
             <p v-if="errorText" class="text-red-600 absolute -top-8 right-0 left-0 text-center">{{ errorText }}</p>
             <div class="flex w-full gap-2 justify-center">
-                <button class="toolbar-button" @click="startAnimation">▶ Start</button>
+                <button class="toolbar-button" @click="startAnimation">Start</button>
                 <button class="toolbar-button" @click="clear">Clear</button>
                 <button v-for="option in algoOptions" :key="option" class="toolbar-button" @click="algo = option">
                     <span class="text-red-500" v-if="algo == option">✓</span>{{ option }}
@@ -223,10 +223,9 @@ onBeforeUnmount(() => {
             </div>
             <div class="flex gap-2">
                 <button v-for="key of cellStateValues.filter(e => !['Visited', 'Path'].includes(e))"
-                    @click="currentSelectedCellType = CellState[key]" class="toolbar-button">
+                    @click="currentSelectedCellType = CellState[key]" class="toolbar-button" :key="key">
                     <div class="w-4 h-4 rounded flex items-center justify-center"
-                        :class="CellStateInfo[CellState[key]].color">
-                        <span v-if="CellState[currentSelectedCellType] == key">✓</span>
+                        :class="[CellStateInfo[CellState[key]].color, CellState[currentSelectedCellType] == key ? 'opacity-100' : 'opacity-30']">
                     </div>
                     {{ key }}
                 </button>

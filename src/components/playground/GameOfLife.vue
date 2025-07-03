@@ -97,8 +97,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-    <div class="motion-preset-focus-lg h-full overflow-hidden flex items-center justify-center mask-y-from-90%
-        mask-y-to-100%">
+    <div class="motion-preset-focus-lg h-full select-none overflow-hidden flex items-center justify-center mask-fade-between">
         <div ref="containerRef" class="w-full aspect-square border-y-2 border-zinc-600/20 overflow-hidden">
             <div class="grid w-full" :style="{ gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` }">
                 <template v-for="(row, y) in grid" :key="y">

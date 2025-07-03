@@ -7,17 +7,14 @@ type AlgoOptions = typeof algoOptions[number]
 
 const chosenAlgo = ref<AlgoOptions>('BubleSort')
 const errorText = ref('')
+const width = window.innerWidth
 const array = ref<number[]>([])
-const numberOfItems = 100
+const numberOfItems = width >= 700 ? 100 : 50
 const min = 10
-const max = 50
+const max = 100
 const shouldStop = ref(false)
 const currentId = ref<number>(-1)
 const finished = ref(false)
-
-function sleep(ms: number) {
-    return new Promise(resolve => setTimeout(resolve, ms))
-}
 
 async function bubbleSort() {
     let steps = 0
@@ -63,16 +60,17 @@ onMounted(() => {
 
 <template>
     <div
-        class="motion-preset-focus-lg h-full overflow-hidden flex items-center justify-center mask-b-from-80% mask-b-to-100%">
-        <div class="flex gap-1 items-end w-full" :key="currentId">
+        class="motion-preset-focus-lg h-full py-20 overflow-hidden flex items-center justify-center mask-fade-between">
+        <div class="flex gap-1 aspect-square items-end w-full" :key="currentId">
             <div v-for="(val, index) in array"
                 :class="index == currentId ? 'bg-red-500' : finished ? 'bg-red-500' : 'bg-zinc-500'" :key="index"
                 :style="{
-                    height: `${val * 10}px`,
+                    height: `${val * 5}px`,
                     width: `${100 / numberOfItems}%`
                 }"></div>
         </div>
     </div>
+
     <Toolbar>
         <div class="flex flex-col gap-2">
             <p v-if="errorText" class="text-red-600 absolute -top-8 right-0 left-0 text-center">{{ errorText }}</p>
